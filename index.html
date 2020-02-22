@@ -24,7 +24,11 @@ title: GitHub Workshop Guestbook
               {% for guest in site.guestbook %}
                 <div class="guestbook-item">
                     <div class="guestbook-profile">
+					{% if guest.image %}
                         <img src="{{guest.image}}" alt="{{guest.name}}"/>
+					{% else %}
+						<img src="../images/default.jpg" alt="{{guest.name}}"/>
+					{% endif %}
                         <span class="emoji">{{guest.emoji}}</span>
                     </div>
                     <h2>{{guest.name}}</h2>
